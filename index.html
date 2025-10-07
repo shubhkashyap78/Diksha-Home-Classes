@@ -139,6 +139,75 @@
         .navbar {
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.95) !important;
+            position: relative;
+            z-index: 2000; /* ensure navbar and toggler sit above other content */
+        }
+        
+        .navbar .container {
+            position: relative;
+        }
+        
+        /* Force show hamburger button */
+        .navbar-toggler {
+            display: block !important;
+            border: 1px solid #ccc !important;
+            padding: 8px 12px !important;
+            background: #f8f9fa !important;
+        }
+        
+        /* Hide navbar links on mobile */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                display: none !important;
+            }
+            
+            .navbar-collapse {
+                    position: absolute !important;
+                    top: 100% !important;
+                    right: 15px !important;
+                    width: auto !important;
+                    min-width: 200px !important;
+                    background: white !important;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+                    border-radius: 10px !important;
+                    z-index: 1000 !important;
+                    padding: 1rem !important;
+                    margin-top: 10px !important;
+                    display: none !important;
+                }
+
+                /* When the collapse has the 'show' class, display it */
+                .navbar-collapse.show {
+                    display: block !important;
+                    z-index: 3001 !important; /* render above other elements */
+                    background: white !important; /* ensure background is visible */
+                }
+
+                /* ensure nav links show when menu is open */
+                .navbar-collapse.show .navbar-nav {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    text-align: right !important;
+                }
+
+                /* force visible link color when menu is open */
+                .navbar-collapse.show .nav-link {
+                    color: #333 !important;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                }
+        }
+        
+        /* Show navbar on desktop */
+        @media (min-width: 992px) {
+            .navbar-toggler {
+                display: none !important;
+            }
+            
+            .navbar-nav {
+                display: flex !important;
+            }
         }
         
         .contact-form {
@@ -297,10 +366,10 @@
             <a class="navbar-brand fw-bold text-primary" href="#">
                 <i class="bi bi-book"></i> Diksha Home Classes
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler ms-auto" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-collapse collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
@@ -472,19 +541,20 @@
                 <div class="col-lg-6">
                     <div class="contact-form">
                         <h2 class="fw-bold mb-4 text-center">Find Your Perfect Tutor</h2>
-                        <form id="tutorForm">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="tutorForm">
+                        <input type="hidden" name="access_key" value="4fd37b34-62b9-48fb-9ec2-8cba3dd6e7ee">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Student Name" required>
+                                <input type="text" name="student_name" class="form-control" placeholder="Student Name" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Parent Name" required>
+                                <input type="text" name="parent_name" class="form-control" placeholder="Parent Name" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" class="form-control" placeholder="Mobile Number" required>
+                                <input type="tel" name="mobile" class="form-control" placeholder="Mobile Number" required>
                             </div>
                             <div class="col-md-6">
-                                <select class="form-select" required>
+                                <select name="class" class="form-select" required>
                                     <option value="">Select Class</option>
                                     <option value="1-5">Class 1-5</option>
                                     <option value="6-8">Class 6-8</option>
@@ -495,13 +565,13 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Subjects Required" required>
+                                <input type="text" name="subjects" class="form-control" placeholder="Subjects Required" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Area in Gorakhpur" required>
+                                <input type="text" name="area" class="form-control" placeholder="Area in Gorakhpur" required>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control" rows="3" placeholder="Additional Requirements (Optional)"></textarea>
+                                <textarea name="requirements" class="form-control" rows="3" placeholder="Additional Requirements (Optional)"></textarea>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-gradient btn-lg w-100">Find Tutor</button>
@@ -539,25 +609,48 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
+    <footer style="background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); color: white; padding: 60px 0 20px 0; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>'); opacity: 0.3;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
             <div class="row">
-                <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">Diksha Home Classes</h5>
-                    <p class="mb-2"><i class="bi bi-telephone me-2"></i>+91 6307 184 045</p>
-                    <p class="mb-2"><i class="bi bi-envelope me-2"></i>dikshahomeclasses@gmail.com</p>
-                    <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Gorakhpur, Uttar Pradesh</p>
+                <div class="col-lg-4 mb-4">
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                        <h4 class="fw-bold mb-4" style="color: var(--accent-color);"><i class="bi bi-mortarboard me-2"></i>Diksha Home Classes</h4>
+                        <div class="mb-3" style="display: flex; align-items: center;"><i class="bi bi-telephone-fill me-3" style="font-size: 1.2rem; color: var(--accent-color);"></i><span>+91 6307 184 045</span></div>
+                        <div class="mb-3" style="display: flex; align-items: center;"><i class="bi bi-envelope-fill me-3" style="font-size: 1.2rem; color: var(--accent-color);"></i><span>dikshahomeclasses@gmail.com</span></div>
+                        <div style="display: flex; align-items: center;"><i class="bi bi-geo-alt-fill me-3" style="font-size: 1.2rem; color: var(--accent-color);"></i><span>Gorakhpur, Uttar Pradesh</span></div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h6 class="fw-bold mb-3">Quick Links</h6>
-                    <p class="mb-1"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
-                    <p class="mb-1"><a href="services.html" class="text-white text-decoration-none">Services</a></p>
-                    <p class="mb-1"><a href="subjects.html" class="text-white text-decoration-none">Subjects</a></p>
-                    <p class="mb-0"><a href="contact.html" class="text-white text-decoration-none">Contact</a></p>
+                <div class="col-lg-4 mb-4">
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                        <h5 class="fw-bold mb-4" style="color: var(--accent-color);"><i class="bi bi-link-45deg me-2"></i>Quick Links</h5>
+                        <div class="mb-2"><a href="index.html" class="text-white text-decoration-none" style="transition: all 0.3s ease;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='white'"><i class="bi bi-house me-2"></i>Home</a></div>
+                        <div class="mb-2"><a href="services.html" class="text-white text-decoration-none" style="transition: all 0.3s ease;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='white'"><i class="bi bi-gear me-2"></i>Services</a></div>
+                        <div class="mb-2"><a href="subjects.html" class="text-white text-decoration-none" style="transition: all 0.3s ease;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='white'"><i class="bi bi-book me-2"></i>Subjects</a></div>
+                        <div class="mb-2"><a href="about.html" class="text-white text-decoration-none" style="transition: all 0.3s ease;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='white'"><i class="bi bi-info-circle me-2"></i>About</a></div>
+                        <div><a href="contact.html" class="text-white text-decoration-none" style="transition: all 0.3s ease;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='white'"><i class="bi bi-telephone me-2"></i>Contact</a></div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <p class="mb-2">&copy; 2025 Diksha Home Classes. All rights reserved.</p>
-                    <p class="mb-0">Developed by <a href="#" class="text-white">Gorakhsh Solution</a></p>
+                <div class="col-lg-4 mb-4">
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px);">
+                        <h5 class="fw-bold mb-4" style="color: var(--accent-color);"><i class="bi bi-chat-dots me-2"></i>Connect With Us</h5>
+                        <div class="mb-3">
+                            <a href="https://wa.me/916307184045" class="btn" style="background: linear-gradient(135deg, #25D366, #128C7E); color: white; border-radius: 25px; padding: 10px 20px; text-decoration: none; display: inline-block; margin-right: 10px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><i class="bi bi-whatsapp me-2"></i>WhatsApp</a>
+                        </div>
+                        <div class="mb-3">
+                            <a href="tel:+916307184045" class="btn" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: white; border-radius: 25px; padding: 10px 20px; text-decoration: none; display: inline-block; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><i class="bi bi-telephone me-2"></i>Call Now</a>
+                        </div>
+                        <p class="mb-2" style="font-size: 0.9rem; opacity: 0.8;">Available: 6:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2); margin: 40px 0 20px 0;">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0" style="opacity: 0.8;">&copy; 2025 Diksha Home Classes. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0" style="opacity: 0.8;">Developed with <i class="bi bi-heart-fill" style="color: var(--accent-color);"></i> by <a href="#" class="text-white text-decoration-none" style="color: var(--accent-color) !important;">Gorakhsh Solution</a></p>
                 </div>
             </div>
         </div>
@@ -572,9 +665,25 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // DEBUG: Script loaded
+        console.log('� DEBUG: Script loaded (bootstrap collapse will handle navbar)');
+        
         document.getElementById('tutorForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you! We will contact you soon with suitable tutor options.');
+            const formData = new FormData(this);
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    alert('Thank you! We will contact you soon with suitable tutor options.');
+                    this.reset();
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            }).catch(error => {
+                alert('Something went wrong. Please try again.');
+            });
         });
     </script>
 </body>
