@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects - Diksha Home Classes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .subject-card {
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .subject-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border: none;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .whatsapp-float a {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 18px;
+            border-radius: 50%;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            .subject-card {
+                margin-bottom: 20px;
+            }
+            
+            .subject-header {
+                padding: 15px;
+            }
+            
+            .subject-header .display-4 {
+                font-size: 2.5rem !important;
+            }
+            
+            .subject-card .p-4 {
+                padding: 1.5rem !important;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-float a {
+                padding: 15px;
+                font-size: 24px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 40px 0;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem !important;
+            }
+            
+            .hero-section .lead {
+                font-size: 1rem;
+            }
+            
+            .subject-header {
+                padding: 10px;
+            }
+            
+            .subject-header h3 {
+                font-size: 1.3rem;
+            }
+            
+            .subject-header .display-4 {
+                font-size: 2rem !important;
+            }
+            
+            .subject-card .p-4 {
+                padding: 1rem !important;
+            }
+            
+            .py-5 {
+                padding: 30px 0 !important;
+            }
+            
+            .bg-light .display-4 {
+                font-size: 2.5rem !important;
+            }
+            
+            .bg-light h5 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">
+                <i class="bi bi-book"></i> Diksha Home Classes
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="subjects.html">Subjects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="display-4 fw-bold mb-4">Subjects We Cover</h1>
+                <p class="lead">Expert tutoring across all major subjects with experienced faculty</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Mathematics -->
+                <div class="col-lg-6">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <i class="bi bi-calculator display-4 mb-3"></i>
+                            <h3 class="fw-bold">Mathematics</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-muted mb-3">From basic arithmetic to advanced calculus, we cover all mathematical concepts.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Algebra & Geometry</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Trigonometry</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Calculus & Statistics</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Problem Solving Techniques</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Class 1-12</span>
+                                <a href="contact.html" class="btn btn-gradient btn-sm">Get Tutor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physics -->
+                <div class="col-lg-6">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <i class="bi bi-atom display-4 mb-3"></i>
+                            <h3 class="fw-bold">Physics</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-muted mb-3">Understanding the laws of nature through practical and theoretical approach.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Mechanics & Thermodynamics</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Electricity & Magnetism</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Optics & Modern Physics</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Practical Problem Solving</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Class 6-12</span>
+                                <a href="contact.html" class="btn btn-gradient btn-sm">Get Tutor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chemistry -->
+                <div class="col-lg-6">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <i class="bi bi-droplet display-4 mb-3"></i>
+                            <h3 class="fw-bold">Chemistry</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-muted mb-3">Explore the world of atoms, molecules, and chemical reactions.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Organic Chemistry</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Inorganic Chemistry</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Physical Chemistry</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Laboratory Techniques</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Class 6-12</span>
+                                <a href="contact.html" class="btn btn-gradient btn-sm">Get Tutor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biology -->
+                <div class="col-lg-6">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <i class="bi bi-tree display-4 mb-3"></i>
+                            <h3 class="fw-bold">Biology</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-muted mb-3">Study of life and living organisms with detailed explanations.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Botany & Zoology</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Human Physiology</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Genetics & Evolution</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>NEET Preparation</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Class 6-12</span>
+                                <a href="contact.html" class="btn btn-gradient btn-sm">Get Tutor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- English -->
+                <div class="col-lg-6">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <i class="bi bi-translate display-4 mb-3"></i>
+                            <h3 class="fw-bold">English</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-muted mb-3">Master the English language with grammar, literature, and communication skills.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Grammar & Vocabulary</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Literature & Poetry</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Essay Writing</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Speaking & Communication</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Class 1-12</span>
+                                <a href="contact.html" class="btn btn-gradient btn-sm">Get Tutor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hindi -->
+                <div class="col-lg-6">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <i class="bi bi-book display-4 mb-3"></i>
+                            <h3 class="fw-bold">Hindi</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-muted mb-3">Comprehensive Hindi language and literature coaching.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>व्याकरण (Grammar)</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>साहित्य (Literature)</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>निबंध लेखन (Essay Writing)</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>कविता व गद्य (Poetry & Prose)</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Class 1-12</span>
+                                <a href="contact.html" class="btn btn-gradient btn-sm">Get Tutor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Studies -->
+                <div class="col-lg-6">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <i class="bi bi-globe display-4 mb-3"></i>
+                            <h3 class="fw-bold">Social Studies</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-muted mb-3">History, Geography, Civics, and Economics made interesting and easy.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>History & Geography</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Political Science</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Economics</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Current Affairs</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Class 1-12</span>
+                                <a href="contact.html" class="btn btn-gradient btn-sm">Get Tutor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Computer Science -->
+                <div class="col-lg-6">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <i class="bi bi-laptop display-4 mb-3"></i>
+                            <h3 class="fw-bold">Computer Science</h3>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-muted mb-3">Programming, software development, and computer fundamentals.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Programming Languages</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Data Structures</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Web Development</li>
+                                <li><i class="bi bi-check-circle text-success me-2"></i>Database Management</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">Class 6-12</span>
+                                <a href="contact.html" class="btn btn-gradient btn-sm">Get Tutor</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="text-center bg-light p-5 rounded">
+                        <h3 class="fw-bold mb-4">Why Choose Our Subject Experts?</h3>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <i class="bi bi-award display-4 text-primary mb-3"></i>
+                                <h5>Qualified Teachers</h5>
+                                <p class="text-muted">Subject matter experts with proven credentials</p>
+                            </div>
+                            <div class="col-md-3">
+                                <i class="bi bi-graph-up display-4 text-primary mb-3"></i>
+                                <h5>Proven Results</h5>
+                                <p class="text-muted">Track record of student success and improvement</p>
+                            </div>
+                            <div class="col-md-3">
+                                <i class="bi bi-clock display-4 text-primary mb-3"></i>
+                                <h5>Flexible Timing</h5>
+                                <p class="text-muted">Classes scheduled as per student convenience</p>
+                            </div>
+                            <div class="col-md-3">
+                                <i class="bi bi-house display-4 text-primary mb-3"></i>
+                                <h5>Home Comfort</h5>
+                                <p class="text-muted">Learn in the comfort of your own home</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Diksha Home Classes</h5>
+                    <p class="mb-2"><i class="bi bi-telephone me-2"></i>+91 6307 184 045</p>
+                    <p class="mb-2"><i class="bi bi-envelope me-2"></i>dikshahomeclasses@gmail.com</p>
+                    <p class="mb-0"><i class="bi bi-geo-alt me-2"></i>Gorakhpur, Uttar Pradesh</p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <p class="mb-1"><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+                    <p class="mb-1"><a href="services.html" class="text-white text-decoration-none">Services</a></p>
+                    <p class="mb-1"><a href="subjects.html" class="text-white text-decoration-none">Subjects</a></p>
+                    <p class="mb-0"><a href="contact.html" class="text-white text-decoration-none">Contact</a></p>
+                </div>
+                <div class="col-md-4">
+                    <p class="mb-2">&copy; 2025 Diksha Home Classes. All rights reserved.</p>
+                    <p class="mb-0">Developed by <a href="#" class="text-white">Shine Infosolutions</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/916307184045" target="_blank">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
