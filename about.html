@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Diksha Home Classes</title>
+    <title>About Diksha Home Classes | 5+ Years Experience | 500+ Happy Students</title>
+    <meta name="description" content="Learn about Diksha Home Classes - Gorakhpur's trusted home tuition service with 5+ years experience, 50+ expert tutors, and 500+ successful students.">
+    <meta name="keywords" content="about diksha home classes, home tuition experience Gorakhpur, qualified tutors, student success stories, education excellence">
+    <meta name="author" content="Diksha Home Classes">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dikshahomeclasses.com/about.html">
+    <meta property="og:title" content="About Diksha Home Classes | Trusted Home Tuition in Gorakhpur">
+    <meta property="og:description" content="5+ years of excellence in home tuition with 500+ happy students and 50+ expert tutors in Gorakhpur.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dikshahomeclasses.com/about.html">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -50,6 +59,31 @@
             color: var(--primary-color);
         }
         
+        .back-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .back-to-top a {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+            color: white;
+        }
+        
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -60,11 +94,17 @@
         .whatsapp-float a {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            padding: 18px;
+            padding: 15px;
             border-radius: 50%;
-            font-size: 28px;
+            font-size: 20px;
             text-decoration: none;
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
         }
         
         .navbar {
@@ -237,22 +277,22 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="stat-item">
-                        <div class="stat-number">500+</div>
+                        <div class="stat-number">5000+</div>
                         <h5>Happy Students</h5>
                         <p class="text-muted">Successfully tutored students</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="stat-item">
-                        <div class="stat-number">50+</div>
+                        <div class="stat-number">5000+</div>
                         <h5>Expert Tutors</h5>
                         <p class="text-muted">Qualified and experienced teachers</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <h5>Years Experience</h5>
+                        <div class="stat-number">10+</div>
+                        <h5>Years Experience(Online+Offline)</h5>
                         <p class="text-muted">In home tuition services</p>
                     </div>
                 </div>
@@ -436,6 +476,13 @@
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        <a href="#" onclick="scrollToTop(); return false;">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </div>
+
     <!-- WhatsApp Float -->
     <div class="whatsapp-float">
         <a href="https://wa.me/916307184045" target="_blank">
@@ -444,5 +491,22 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
